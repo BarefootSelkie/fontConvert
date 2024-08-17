@@ -4,7 +4,7 @@ from PIL import Image, ImageDraw, ImageFont
 import yaml
 import os
 
-defaultSize = 32 # This is the output size for the bmp that will be the font, not the size of the font used to generate the bmp
+defaultSize = 32 # This is the defai;t output size for the png that will be the font, not the size of the font used to generate the bmp
 
 fontFile = {
     "fontText": "./ttf/Noto_Sans/static/NotoSans-Medium.ttf",
@@ -54,9 +54,9 @@ for setName in charset.keys():
         drawing.text((outputSize/2, (outputSize / 2 ) + fontVOffset), character, fill=0, font=font, anchor="mm")
 
         if "names" in set and set["names"][index] is not None:
-            fileName = "./bmp/" + setName + "/" + str(set["names"][index]) + ".png"
+            fileName = "./png/" + setName + "/" + str(set["names"][index]) + ".png"
         else:
-            fileName = "./bmp/" + setName + "/" + str(index) + ".png"
+            fileName = "./png/" + setName + "/" + str(index) + ".png"
         
         symbol.save(fileName)
         index = index + 1

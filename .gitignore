@@ -1,6 +1,7 @@
 # Copyrighted stuff
 ttf/*
 bmp/*
+png/*
 
 # MacOS Nonsense
 .DS*
