@@ -1,6 +1,9 @@
 NumStandard:
-  font: fontText
-  chars: ["0","1","2","3","4","5","6","7","8","9"]
+  font: fontFredoka
+  canvasSize: 96
+  scale: 120
+  variableWidth: true
+  chars: ["0","1","2","3","4","5","6","7","8","9",":"]
 
 Seasons: 
   font: fontEmoji
@@ -36,13 +39,13 @@ Cards:
 
 Weather:
   scale: 86
-  size: 128
+  canvasSize: 96
   font: fontEmoji
   chars: [❄️,🌨,🌨,🌩,⛈️,⛈️,🌧,🌦,🌦,🌫️,🌬,☁️,🌥,🌥,☀️,🌙]
   names: [snow,snow-showers-day,snow-showers-night,thunder-rain,thunder-showers-day,thunder-showers-night,rain,showers-day,showers-night,fog,wind,cloudy,partly-cloudy-day,partly-cloudy-night,clear-day,clear-night]
 
 Moon:
   scale: 86
-  size: 128
+  canvasSize: 96
   font: fontEmoji
   chars: [🌑,🌒,🌓,🌔,🌕,🌖,🌗,🌘]

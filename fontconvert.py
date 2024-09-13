@@ -7,6 +7,7 @@ import os
 defaultSize = 32 # This is the defai;t output size for the png that will be the font, not the size of the font used to generate the bmp
 
 fontFile = {
+    "fontFredoka": "./ttf/Fredoka-Medium.ttf",
     "fontText": "./ttf/Noto_Sans/static/NotoSans-Medium.ttf",
     "fontEmoji": "./ttf/Noto_Emoji/static/NotoEmoji-Medium.ttf",
     "fontSymbols": "./ttf/Noto_Sans_Symbols/static/NotoSansSymbols-Medium.ttf",
@@ -25,18 +26,18 @@ for setName in charset.keys():
     set = charset[setName]
 
     # If there is no directory to store the data create it
-    if not os.path.exists("./bmp/" + setName):
-        os.mkdir("./bmp/" + setName)
+    if not os.path.exists("./png/" + setName):
+        os.mkdir("./png/" + setName)
     
-    if "size" in set and set["size"] is not None:
-        outputSize = set["size"]
+    if "canvasSize" in set and set["canvasSize"] is not None:
+        canvasSize = set["canvasSize"]
     else:
-        outputSize = defaultSize
+        canvasSize = defaultSize
 
     if "scale" in set and set["scale"] is not None:
-        fontSize = int(outputSize * (set["scale"] / 100))
+        fontSize = int(canvasSize * (set["scale"] / 100))
     else:
-        fontSize = int(outputSize * (7 / 8))
+        fontSize = int(canvasSize * (7 / 8))
 
     if "voffset" in set and set["voffset"] is not None:
         fontVOffset = set["voffset"]
@@ -49,9 +50,14 @@ for setName in charset.keys():
 
     for character in set["chars"]:
 
-        symbol = Image.new(mode="1", size=(outputSize, outputSize), color=(1))
+        if "variableWidth" in set and set["variableWidth"]:
+            canvasWidth = int(font.getlength(character))
+        else:
+            canvasWidth = canvasSize
+
+        symbol = Image.new(mode="1", size=(canvasWidth, canvasSize), color=(1))
         drawing = ImageDraw.Draw(symbol)
-        drawing.text((outputSize/2, (outputSize / 2 ) + fontVOffset), character, fill=0, font=font, anchor="mm")
+        drawing.text((canvasWidth/2, (canvasSize / 2 ) + fontVOffset), character, fill=0, font=font, anchor="mm")
 
         if "names" in set and set["names"][index] is not None:
             fileName = "./png/" + setName + "/" + str(set["names"][index]) + ".png"
