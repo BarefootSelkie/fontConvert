@@ -1,10 +1,4 @@
-NumStandard:
-  font: fontFredoka
-  canvasSize: 96
-  scale: 120
-  variableWidth: true
-  chars: ["0","1","2","3","4","5","6","7","8","9",":"]
-
+# for serve-whome
 Seasons: 
   font: fontEmoji
   chars: [🌧️,🌱,☀️,🌾,🍂,❄️]
@@ -37,6 +31,8 @@ Cards:
   font: fontSymbols2
   chars: [♠,♡,♢,♣]
 
+# for home-info-display weather
+
 Weather:
   scale: 86
   canvasSize: 96
@@ -49,3 +45,37 @@ Moon:
   canvasSize: 96
   font: fontEmoji
   chars: [🌑,🌒,🌓,🌔,🌕,🌖,🌗,🌘]
+
+# for clock-hs
+
+numerals96px:
+  font: fontFredoka
+  canvasSize: 96
+  scale: 116
+  variableWidth: true
+  chars: ["0","1","2","3","4","5","6","7","8","9",":"]
+
+numerals28px:
+  font: fontFredoka
+  canvasSize: 28
+  variableWidth: true
+  chars: ["0","1","2","3","4","5","6","7","8","9"]
+
+fractals28px:
+  canvasSize: 28
+  voffset: -3
+  font: fontSymbols
+  variableWidth: true
+  chars: [➀,➁,➂,➃,➎,➏]
+
+seasons28px: 
+  canvasSize: 28
+  font: fontEmoji
+  variableWidth: true
+  chars: [🌧️,🌱,☀️,🌾,🍂,❄️]
+
+seasonNames28px:
+  font: fontFredoka
+  canvasSize: 28
+  variableWidth: true
+  chars: ["Prevernal", "Vernal", "Estival", "Serotinal", "Autumnal", "Hibernal"]
